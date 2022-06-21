@@ -1,15 +1,15 @@
 # LIO_Connector
 tool for generate and visualize inter-dataset loop closure for long-term SLAM
 
-  ├──LIO_connector
-     ├── ...
-     ├── src                    
-     │   ├── ...           
-     │   └── mian.cpp                # Tool for gathering the inter dataset loop closure based on DiSco SLAM
-     ├── scripts
-     │   └── load_map_cloud.py       # Tested with Python 2.7
-     └── launch
-         └── visualization.launch
+├──LIO_connector
+   ├── ...
+   ├── src                    
+   │   ├── ...           
+   │   └── mian.cpp                # Tool for gathering the inter dataset loop closure based on DiSco SLAM
+   ├── scripts
+   │   └── load_map_cloud.py       # Tested with Python 2.7
+   └── launch
+       └── visualization.launch
 
 ## How to use? 
 - run load_map_cloud.py for the pcd pointcloud of the whole map
