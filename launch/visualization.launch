@@ -1,0 +1,19 @@
+<launch>
+
+	<arg name="map0" default="$(find lio_connector)/data/out1.pcd" />
+	<arg name="map1" default="$(find lio_connector)/data/out2.pcd" />
+	<arg name="map2" default="$(find lio_connector)/data/out3.pcd" />
+
+	<node pkg="tf" type="static_transform_publisher" name="base_link_to_map"  args="0 0 0 0 0 0 /map    /base_link 10" />
+	<node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find lio_connector)/launch/rviz.rviz" />
+
+	<node pkg="pcl_ros" type="pcd_to_pointcloud" name="map0_publisher" output="screen"
+		  args="$(arg map0) 5 _frame_id:=/map cloud_pcd:=/map0" />
+
+	<node pkg="pcl_ros" type="pcd_to_pointcloud" name="map1_publisher" output="screen"
+		  args="$(arg map1) 5 _frame_id:=/map cloud_pcd:=/map1" />
+
+	<node pkg="pcl_ros" type="pcd_to_pointcloud" name="map2_publisher" output="screen"
+		  args="$(arg map2) 5 _frame_id:=/map cloud_pcd:=/map2" />
+
+</launch>
